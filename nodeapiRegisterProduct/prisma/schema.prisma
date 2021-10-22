@@ -1,0 +1,30 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+} 
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Category{
+  //product Product @relation(fields: [product_category], references: [category])
+  category  String@unique
+
+  @@map("category")
+  product_category  Product[]
+}
+
+model Product{
+  id            String@id @default(uuid())
+  name          String
+  price         Float
+
+  category Category @relation(fields: [product_category], references: [category])
+  product_category      String@unique
+
+  @@map("product")  
+}
+
+
+
