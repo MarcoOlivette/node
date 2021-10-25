@@ -3,11 +3,9 @@ import prismaClient from "../prisma";
 
 class GetProductByCategoryService {
     async execute(category: string){
-        const product = await prismaClient.category.findMany({
+        const product = await prismaClient.product.findMany({
             where:{
-                category: category
-            },include:{
-                product_category:true
+                product_category: category
             }
         })
 
