@@ -10,7 +10,7 @@ import { UpdateProductController } from '../controller/updateProductController'
 export const productRouter:Router = Router()
 
 productRouter.post('/create', new CreateProductController().handle)
-productRouter.get('getcategory', new GetProductByCategoryController().handle)
+productRouter.get('/getcategory', new GetProductByCategoryController().handle)
 productRouter.get('/getname', new GetProductByNameController().handle)
 productRouter.put('/updateproduct', new UpdateProductController().handle)
 productRouter.put('/incrementamout', new IncrementProductAmoutController().handle)
