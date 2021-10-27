@@ -2,7 +2,7 @@ import prismaClient from "../prisma";
 
 
 class CreateProductService {
-    async execute(name: string, price: number, category: string ){
+    async execute(name: string, price: number, category: string, amout: number ){
 
         const product = await prismaClient.product.create({
            data:{
@@ -16,6 +16,11 @@ class CreateProductService {
                        where:{
                            category
                        }
+                   }
+               },
+               inventory:{
+                   create:{
+                       amout
                    }
                }
            }

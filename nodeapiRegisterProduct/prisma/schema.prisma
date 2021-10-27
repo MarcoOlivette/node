@@ -24,8 +24,25 @@ model Product{
   category Category @relation(fields: [product_category], references: [category])
   product_category      String
 
+  inventory Inventory @relation(fields: [product_inventory],  references: [amout])
+  product_inventory Int 
+
+  // shipping Shipping?
+  // product_shipping Int @unique
+
   @@map("product")  
 }
 
+model Inventory {
+  amout         Int @unique
+  product Product?
+
+  @@map("inventory")
+}
+
+// model Shipping {
+//   amout        Int @unique
+//   product Product @relation(fields: [amout], references: [product_shipping])
+// }
 
 

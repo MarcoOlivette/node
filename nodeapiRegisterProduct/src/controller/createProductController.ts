@@ -3,11 +3,11 @@ import { CreateProductService } from '../services/createProductService'
 
 class CreateProductController {
     async handle(req: Request, res: Response){
-        const { name, price, category } = req.body
+        const { name, price, category, amout } = req.body
 
         const service = new CreateProductService()
 
-        const result = await service.execute(name, price, category)
+        const result = await service.execute(name, price, category, amout)
 
         return res.json(result)
     }
