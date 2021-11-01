@@ -18,31 +18,34 @@ model Category{
 
 model Product{
   id            String@id @default(uuid())
-  name          String
+  name          String @unique
   price         Float
+  amout         Int
 
   category Category @relation(fields: [product_category], references: [category])
   product_category      String
 
-  inventory Inventory @relation(fields: [product_inventory],  references: [amout])
-  product_inventory Int 
+  // inventory Inventory @relation(fields: [product_inventory],  references: [amout]) @ignore
+  // product_inventory Int
 
-  // shipping Shipping?
-  // product_shipping Int @unique
+  // shipping Shipping @relation(fields: [product_shipping], references: [id])
+  // product_shipping  String
 
   @@map("product")  
 }
 
-model Inventory {
-  amout         Int @unique
-  product Product?
+// model Inventory {
+//   amout         Int 
+//   product Product?
 
-  @@map("inventory")
-}
-
-// model Shipping {
-//   amout        Int @unique
-//   product Product @relation(fields: [amout], references: [product_shipping])
+//   @@map("inventory")
 // }
 
+// model Shipping {
+//   id            String@id @default(uuid())
+//   created_at    DateTime @default(now())
+//   amout         Int 
+  
+//   products Product[]
+// }
 

@@ -9,13 +9,9 @@ class DecrementProductAmoutService {
                 id
             },
             data:{
-               inventory:{
-                    update:{
-                        amout:{
-                            decrement:new_amout
-                        }
-                    }
-               }
+              amout:{
+                  decrement: new_amout
+              }
             }
 
         })

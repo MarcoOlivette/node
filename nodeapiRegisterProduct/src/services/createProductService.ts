@@ -8,6 +8,7 @@ class CreateProductService {
            data:{
                name,
                price,
+               amout,
                category:{
                    connectOrCreate:{
                        create:{
@@ -18,11 +19,6 @@ class CreateProductService {
                        }
                    }
                },
-               inventory:{
-                   create:{
-                       amout
-                   }
-               }
            }
         })
 

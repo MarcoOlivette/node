@@ -9,13 +9,9 @@ class IncrementProductAmoutService {
                 id
             },
             data:{
-               inventory:{
-                    update:{
-                        amout:{
-                            increment:new_amout
-                        }
-                    }
-               }
+                amout:{
+                    increment: new_amout
+                }
             }
 
         })
