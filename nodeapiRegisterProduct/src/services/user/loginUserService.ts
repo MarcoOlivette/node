@@ -4,7 +4,7 @@ import prismaClient from "../../prisma";
 
 class LoginUserService {
     async execute(email:string, password:string){
-       try {
+      
          const user = await prismaClient.user.findUnique({
              where:{
                  email
@@ -24,10 +24,6 @@ class LoginUserService {
          )
 
          return {token, user}
-           
-       } catch (error) {
-           return error
-       }
 
     }
 }
