@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { DecrementProductAmoutService } from '../services/decrementProductAmoutService'
+import { DecrementProductAmoutService } from '../../services/product/decrementProductAmoutService'
 
 
 class DecrementProductAmoutController {

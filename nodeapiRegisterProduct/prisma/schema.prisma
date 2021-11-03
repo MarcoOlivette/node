@@ -7,7 +7,16 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model User {
+  id        String@id @default(uuid())
+  name      String
+  email     String@unique 
+  password  String
+  //avatar    String
 
+
+  @@map("user")
+}
 
 model Category{
   category  String@unique 
@@ -25,21 +34,11 @@ model Product{
   category Category @relation(fields: [product_category], references: [category])
   product_category      String
 
-  // inventory Inventory @relation(fields: [product_inventory],  references: [amout]) @ignore
-  // product_inventory Int
-
   // shipping Shipping @relation(fields: [product_shipping], references: [id])
   // product_shipping  String
 
   @@map("product")  
 }
-
-// model Inventory {
-//   amout         Int 
-//   product Product?
-
-//   @@map("inventory")
-// }
 
 // model Shipping {
 //   id            String@id @default(uuid())

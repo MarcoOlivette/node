@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { DeleteProductService } from '../services/deleteProductService'
+import { DeleteProductService } from '../../services/product/deleteProductService'
 
 
 class DeleteProductController {
