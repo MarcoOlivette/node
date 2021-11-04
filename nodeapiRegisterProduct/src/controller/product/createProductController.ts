@@ -1,8 +1,10 @@
 import { Request, Response } from 'express'
+import { body, validationResult } from 'express-validator'
 import { CreateProductService } from '../../services/product/createProductService'
 
 class CreateProductController {
     async handle(req: Request, res: Response){
+
         const { name, price, category, amout } = req.body
 
         const service = new CreateProductService()

@@ -21,6 +21,6 @@ export function userAuthenticated(req: Request, res: Response, next: NextFunctio
         const { sub } = verify(token, process.env.JWT_SECRET) as IPayload
         return next()
     } catch (error) {
-        return res.status(401).json({errorCode: 'expired token'})
+        return res.status(401).json({errorCode: 'invalid token'})
     }
 }

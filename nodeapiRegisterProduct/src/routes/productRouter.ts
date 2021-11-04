@@ -12,7 +12,7 @@ import { userAuthenticated } from '../middleware/userAuthenticated'
 
 export const productRouter:Router = Router()
 
-productRouter.post('/create',userAuthenticated, new CreateProductController().handle)
+productRouter.post('/create', userAuthenticated, new CreateProductController().handle)
 productRouter.get('/getcategory', new GetProductByCategoryController().handle)
 productRouter.get('/getname', new GetProductByNameController().handle)
 productRouter.get('/categorys', new GetCategorysController().handle)
