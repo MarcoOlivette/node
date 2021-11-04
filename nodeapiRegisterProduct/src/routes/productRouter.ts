@@ -8,15 +8,16 @@ import { GetProductByCategoryController } from '../controller/product/getProduct
 import { GetProductByNameController } from '../controller/product/getProductByNameController'
 import { IncrementProductAmoutController } from '../controller/product/incrementAmoutProductController'
 import { UpdateProductController } from '../controller/product/updateProductController'
+import { userAuthenticated } from '../middleware/userAuthenticated'
 
 export const productRouter:Router = Router()
 
-productRouter.post('/create', new CreateProductController().handle)
+productRouter.post('/create',userAuthenticated, new CreateProductController().handle)
 productRouter.get('/getcategory', new GetProductByCategoryController().handle)
 productRouter.get('/getname', new GetProductByNameController().handle)
 productRouter.get('/categorys', new GetCategorysController().handle)
-productRouter.put('/updateproduct', new UpdateProductController().handle)
-productRouter.put('/incrementamout', new IncrementProductAmoutController().handle)
-productRouter.put('/decrementamout', new DecrementProductAmoutController().handle)
-productRouter.delete('/deleteproduct', new DeleteProductController().handle)
-productRouter.delete('/deletecategory', new DeleteCategoryController().handle)
+productRouter.put('/updateproduct',userAuthenticated, new UpdateProductController().handle)
+productRouter.put('/incrementamout',userAuthenticated, new IncrementProductAmoutController().handle)
+productRouter.put('/decrementamout',userAuthenticated, new DecrementProductAmoutController().handle)
+productRouter.delete('/deleteproduct',userAuthenticated, new DeleteProductController().handle)
+productRouter.delete('/deletecategory',userAuthenticated, new DeleteCategoryController().handle)
