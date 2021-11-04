@@ -7,9 +7,13 @@ class SignInUserController {
 
         const service = new SignInUserService()
 
-        const result = await service.execute(name, email, password)
+        try {
+            const result = await service.execute(name, email, password)
 
-        return res.json(result)
+            return res.json(result)
+        } catch (error) {
+            return res.status(400).json({message: 'User already exist'})
+        }
     }
 }
 

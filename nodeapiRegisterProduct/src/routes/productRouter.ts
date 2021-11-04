@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import { CreateProductController } from '../controller/product/createProductController'
 import { DecrementProductAmoutController } from '../controller/product/decrementProductAmoutController'
+import { DeleteCategoryController } from '../controller/product/deleteProductCategoryController'
 import { DeleteProductController } from '../controller/product/deleteProductController'
 import { GetCategorysController } from '../controller/product/getCategorysController'
 import { GetProductByCategoryController } from '../controller/product/getProductByCategoryController'
@@ -17,4 +18,5 @@ productRouter.get('/categorys', new GetCategorysController().handle)
 productRouter.put('/updateproduct', new UpdateProductController().handle)
 productRouter.put('/incrementamout', new IncrementProductAmoutController().handle)
 productRouter.put('/decrementamout', new DecrementProductAmoutController().handle)
-productRouter.delete('/delete', new DeleteProductController().handle)
+productRouter.delete('/deleteproduct', new DeleteProductController().handle)
+productRouter.delete('/deletecategory', new DeleteCategoryController().handle)

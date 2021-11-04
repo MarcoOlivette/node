@@ -13,7 +13,7 @@ class LoginUserController {
 
             return res.json(result)   
         } catch (err) {
-            return res.status(401).json({message: 'User not found'})
+            return res.status(404).json({message: 'User not found'})
         }
 
     }

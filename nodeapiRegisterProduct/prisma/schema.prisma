@@ -5,6 +5,7 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
 }
 
 model User {
@@ -31,7 +32,7 @@ model Product{
   price         Float
   amout         Int
 
-  category Category @relation(fields: [product_category], references: [category])
+  category Category @relation(fields: [product_category], references: [category], onDelete: Cascade)
   product_category      String
 
   // shipping Shipping @relation(fields: [product_shipping], references: [id])
