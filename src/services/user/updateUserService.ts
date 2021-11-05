@@ -11,6 +11,10 @@ class UpdateUserService {
             data:{
                name,
                email
+            },
+            select:{
+                name: true,
+                email: true
             }
 
         })
