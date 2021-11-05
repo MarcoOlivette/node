@@ -1,5 +1,4 @@
 import { Request, Response } from 'express'
-import { SignInUserService } from '../../services/user/signinUserService'
 import { UpdateUserService } from '../../services/user/updateUserService'
 
 class UpdateUserController {
